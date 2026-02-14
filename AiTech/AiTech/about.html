@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="utf-8">
+
+    <script src="https://amir-local-dev.o18-test.com/resources/sdk/web/WebSDK.js"></script>
+    
     <title>AI.Tech - Artificial Intelligence HTML Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
@@ -33,6 +36,32 @@
 
 <body>
     <!-- Spinner Start -->
+
+    <script>
+        window.Offer18WebSDK.activateDebugMode();
+        window.Offer18WebSDK.trackConversion({
+            domain: 'testvalid.o18.link',
+            accountId: '3872',
+            offerId: '6597212',
+            auth_token: 'f47aded75a',
+            isCrossDomainEnabled: true,
+            conversionRedirectUrl: 'https://mageewindson.github.io/GTM/team.html',
+            postbackType: 'pixel', // 'iframe' or 'pixel'
+            isGlobalPixel: true, // true or false
+            allowMultiConversion: true, // true or false
+            conversionData: {
+                event: '', // Event Name (Please specify the event)
+                payout: '', // Payout Amount (Please specify the payout amount)
+                sale: '', // Sale Amount (Please specify the sale amount)
+                currency: 'INR',
+                adv_sub1: '1',
+                adv_sub2: '2',
+                adv_sub3: '3',
+                adv_sub4: '4',
+                adv_sub5: '5',
+            }
+        })
+    </script>
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -215,5 +244,6 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
+
 
 </html>
