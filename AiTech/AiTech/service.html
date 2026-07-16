@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <script src="https://noht6.ttrk.io/unilpclick.js?attribution=lastpaid&cookiedomain=&cookieduration=90&defaultcampaignid=6a587e37c9eefda326476912&regviewonce=false"></script>
+
 
     <meta charset="utf-8">
     <title>AI.Tech - Artificial Intelligence HTML Template</title>
@@ -276,7 +278,7 @@ function trackAndRedirect() {
         var rtCookie = getCookie('rtkclickid-store') || getSessionClickID();
         //create request with its properties (you can add to the postback &status= &type= &sum= like in custom image postback)
         var request = new XMLHttpRequest();
-        request.open("GET", domain + '/postback?clickid=${clickid}'+rtCookie + '&type=' + type + '&sum={replace_or_remove}');
+        request.open("GET", domain + '/postback?clickid='+rtCookie + '&type=' + type + '&sum={replace_or_remove}');
         //optional - to read our response code :create callback for success containing the response
         request.success = function(response) {
             console.log(response);
