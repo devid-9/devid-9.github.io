@@ -58,7 +58,7 @@ function trackAndRedirect() {
         var rtCookie = getCookie('rtkclickid-store') || getSessionClickID();
         //create request with its properties (you can add to the postback &status= &type= &sum= like in custom image postback)
         var request = new XMLHttpRequest();
-        request.open("GET", domain + '/postback?clickid==${clickId}'+rtCookie + '&type=' + type + '&sum={replace_or_remove}');
+        request.open("GET", domain + '/postback?clickid='+rtCookie + '&type=' + type + '&sum={replace_or_remove}');
         //optional - to read our response code :create callback for success containing the response
         request.success = function(response) {
             console.log(response);
