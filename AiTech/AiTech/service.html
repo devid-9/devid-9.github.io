@@ -32,7 +32,7 @@
 </head>
 
 <body>
-    <button onclick="trackAndRedirect()">CTA</button>
+    <!-- <button onclick="trackAndRedirect()">CTA</button>
 
 <script>
 function trackAndRedirect() {
@@ -42,7 +42,36 @@ function trackAndRedirect() {
 
     window.location.href = "https://example.com";
 }
-</script>
+</script> -->
+//Redtrack
+    
+      <script>
+        var domain = "https://noht6.ttrk.io";
+        var type = "conversion";
+        function getCookie(name) {
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+        function getSessionClickID() {
+            return sessionStorage.getItem('rtkclickid');
+        }
+        var rtCookie = getCookie('rtkclickid-store') || getSessionClickID();
+        //create request with its properties (you can add to the postback &status= &type= &sum= like in custom image postback)
+        var request = new XMLHttpRequest();
+        request.open("GET", domain + '/postback?clickid='+rtCookie + '&type=' + type + '&sum={replace_or_remove}');
+        //optional - to read our response code :create callback for success containing the response
+        request.success = function(response) {
+            console.log(response);
+        };
+        //optional - to read our response code : and a fail callback containing the error
+        request.fail = function(error) {
+            console.log(error);
+        };
+        //and finally send it away
+        request.send();
+      </script>
+
     <!-- Spinner Start -->
 
     <div id="spinner"
