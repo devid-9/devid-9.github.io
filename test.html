@@ -44,7 +44,7 @@
    style="background:#f59e0b;">Claim Offer 4</a>
 
 
-<button onclick="trackAndRedirect()">Click Here For Conversion</button>
+<button onclick="trackAndRedirect()">Conversion iFrame</button>
 <script>
 function trackAndRedirect() {
     var iframe = document.createElement("iframe");
@@ -54,10 +54,24 @@ function trackAndRedirect() {
     iframe.style.display = "none";
     document.body.appendChild(iframe);
 
-    // window.location.href = "https://example.com";
 }
 </script>
+
+
         
+        <button onclick="trackAndRedirect2()">Track Pixel</button>
+
+<script>
+function trackAndRedirect2() {
+    var img = document.createElement("img");
+    img.src = "https://ganesh-local-dev.o18-test.com/tracking/p.php?type=mb&m=18962&t=i&gb=1";
+    img.width = 0;
+    img.height = 0;
+    img.style.display = "none";
+    document.body.appendChild(img);
+}
+</script>
+
         
 <a href="https://ganesh-local-dev.o18-test.com/tracking/click"
    class="cta js-cta"
