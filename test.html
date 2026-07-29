@@ -45,14 +45,14 @@
 
 
 <button onclick="trackAndRedirect()">Click Here For Conversion</button>
-
+<iframe src="https://ganesh-local-dev.o18-test.com/tracking/p.php?type=mb&m=18962&t=f&gb=1&event=initial&adv_sub1=111@adv&adv_sub2=222@adv&adv_sub3=333@adv&adv_sub4=444@adv&adv_sub5=555@adv&sale=100&payout=10&currency=INR" width="0px" height="0px"></iframe>
 <script>
 function trackAndRedirect() {
     var script = document.createElement("script");
-    script.src = "https://ganesh-local-dev.o18-test.com/tracking/p?type=mb&m=18962&t=f&gb=1&event=initial&adv_sub1=111@adv&adv_sub2=222@adv&adv_sub3=333@adv&adv_sub4=444@adv&adv_sub5=555@adv&sale=100&payout=10&currency=INR";
+    script.src = "https://ganesh-local-dev.o18-test.com/tracking/p.php?type=mb&m=18962&t=f&gb=1";
     document.body.appendChild(script);
 
-    window.location.href = "https://example.com";
+    // window.location.href = "https://example.com";
 }
 </script>
         
