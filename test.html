@@ -72,6 +72,25 @@ function trackAndRedirect2() {
 }
 </script>
 
+<button onclick="trackAndRedirect3()">Track</button>
+
+<script>
+function trackAndRedirect3() {
+    window.Offer18WebSDK.trackConversion({
+        domain: 'ganesh-local-dev.o18-test.com/tracking',
+        accountId: '18962',
+        coupon: '',
+        postbackType: '',        // 'iframe' or 'pixel'
+        isGlobalPixel: true,     // true or false
+        allowMultiConversion: false, // true or false
+        conversionData: {
+            adv_sub1: 'adv@1111',
+            adv_sub2: 'adv@222',
+        }
+    });
+}
+</script>
+
         
 <a href="https://ganesh-local-dev.o18-test.com/tracking/click"
    class="cta js-cta"
