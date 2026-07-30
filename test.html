@@ -48,9 +48,19 @@
 <a href="https://ganesh-local-dev.o18-test.com/tracking/click/4"
    class="cta js-cta"
    style="background:#f59e0b;">Claim Offer 4</a>
-
-
-<button onclick="trackAndRedirect()">Track - iFrame</button>
+        
+<a href="https://ganesh-local-dev.o18-test.com/tracking/click"
+   class="cta js-cta"
+   style="background:#7c3aed;">Claim Offer Random</a>
+                 
+<!--iFrame-->
+<button
+    type="button"
+    class="cta js-cta"
+    style="background:#f59e0b; cursor:pointer;"
+    onclick="trackAndRedirect()">
+    Track - iFrame
+</button>    
 <script>
 function trackAndRedirect() {
     var iframe = document.createElement("iframe");
@@ -59,15 +69,19 @@ function trackAndRedirect() {
     iframe.height = "0";
     iframe.style.display = "none";
     document.body.appendChild(iframe);
-
 }
 </script>
 
+<!-- Pixel -->
+      <button
+    type="button"
+    class="cta js-cta"
+    style="background:#f59e0b; cursor:pointer;"
+    onclick="trackAndRedirect2()">
+    Track - Pixel
+</button>  
 
-        
-        <button onclick="trackAndRedirect2()">Track - Pixel</button>
-
-<script>
+        <script>
 function trackAndRedirect2() {
     var img = document.createElement("img");
     img.src = "https://ganesh-local-dev.o18-test.com/tracking/p.php?type=mb&m=18962&t=i&gb=1";
@@ -77,10 +91,16 @@ function trackAndRedirect2() {
     document.body.appendChild(img);
 }
 </script>
+<!--Web Sdk  -->
+   <button
+    type="button"
+    class="cta js-cta"
+    style="background:#f59e0b; cursor:pointer;"
+    onclick="trackAndRedirect3()">
+    Track - SDK
+</button>     
 
-<button onclick="trackAndRedirect3()">Track - Sdk</button>
-
-<script>
+        <script>
 function trackAndRedirect3() {
     window.Offer18WebSDK.trackConversion({
         domain: 'ganesh-local-dev.o18-test.com/tracking',
@@ -95,15 +115,10 @@ function trackAndRedirect3() {
         }
     });
 }
+    
 </script>
-
-        
-<a href="https://ganesh-local-dev.o18-test.com/tracking/click"
-   class="cta js-cta"
-   style="background:#7c3aed;">Claim Offer Random</a>
-            <div class="debug">click url: ?m=18962&amp;campaign_id=7</div>
-    </div>
-  
+    <div class="debug">click url: ?m=18962&amp;campaign_id=7</div>
+    </div> 
   
   <script>
     (function () {
