@@ -77,6 +77,14 @@
             color: white;
         }
     </style>
+
+      <!--Offer18 script  -->
+  <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script>
+  <script>
+    window.Offer18WebSDK.initializeUrlParam('utm_source');
+</script>
+
+    <!--  -->
 </head>
 <body>
 
@@ -209,7 +217,84 @@
             <p class="usecase"><strong>Use Case:</strong> Smart cities & security systems.</p>
             <p><a href="https://en.wikipedia.org/wiki/Computer_vision" target="_blank">Reference: Computer Vision</a></p>
         </div>
+<!--iFrame-->
+<button
+    type="button"
+    class="cta js-cta"
+    style="background:#e63946; cursor:pointer;"
+    onclick="trackAndRedirect()">
+    Track - iFrame
+</button>    
+<script>
+function trackAndRedirect() {
+    var iframe = document.createElement("iframe");
+    iframe.src = "https://ganesh-local-dev.o18-test.com/tracking/p.php?type=mb&m=18962&t=f&gb=1&event=initial&adv_sub1=111@adv&adv_sub2=222@adv&adv_sub3=333@adv&adv_sub4=444@adv&adv_sub5=555@adv&sale=100&payout=10&currency=INR";
+    iframe.width = "0";
+    iframe.height = "0";
+    iframe.style.display = "none";
+    document.body.appendChild(iframe);
+}
+</script>
 
+<!-- Pixel -->
+      <button
+    type="button"
+    class="cta js-cta"
+    style="background:#2563eb; cursor:pointer;"
+    onclick="trackAndRedirect2()">
+    Track - Pixel
+</button>  
+
+        <script>
+function trackAndRedirect2() {
+    var img = document.createElement("img");
+    img.src = "https://ganesh-local-dev.o18-test.com/tracking/p.php?type=mb&m=18962&t=i&gb=1";
+    img.width = 0;
+    img.height = 0;
+    img.style.display = "none";
+    document.body.appendChild(img);
+}
+</script>
+<!--Web Sdk  -->
+   <button
+    type="button"
+    class="cta js-cta"
+    style="background:#16a34a; cursor:pointer;"
+    onclick="trackAndRedirect3()">
+    Track - SDK
+</button>     
+
+        <script>
+function trackAndRedirect3() {
+    window.Offer18WebSDK.trackConversion({
+        domain: 'ganesh-local-dev.o18-test.com/tracking',
+        accountId: '18962',
+        coupon: '',
+        postbackType: '',        // 'iframe' or 'pixel'
+        isGlobalPixel: true,     // true or false
+        allowMultiConversion: false, // true or false
+        conversionData: {
+            adv_sub1: 'adv@1111',
+            adv_sub2: 'adv@222',
+        }
+    });
+}
+    
+</script>
+    <div class="debug">click url: ?m=18962&amp;campaign_id=7</div>
+    </div> 
+  
+  <script>
+    (function () {
+      var visitId = new URLSearchParams(window.location.search).get('visit_id');
+      if (!visitId) return;
+      document.querySelectorAll('.js-cta').forEach(function (a) {
+        var url = new URL(a.href, window.location.href);
+        url.searchParams.set('visit_id', visitId);
+        a.href = url.toString();
+      });
+    })();
+  </script>
     </div>
 </section>
 
