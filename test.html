@@ -135,7 +135,7 @@
    style="background:#7c3aed;">Claim Offer Random</a> -->
                  
 <!--iFrame-->
-<button
+<!-- <button
     type="button"
     class="cta js-cta"
     style="background:#e63946; cursor:pointer;"
@@ -154,15 +154,15 @@ function trackAndRedirect() {
 </script>
 
 <!-- Pixel -->
-      <button
+      <!-- <button
     type="button"
     class="cta js-cta"
     style="background:#2563eb; cursor:pointer;"
     onclick="trackAndRedirect2()">
     Track - Pixel
-</button>  
+</button>   -->
 
-        <script>
+        <!-- <script>
 function trackAndRedirect2() {
     var img = document.createElement("img");
     img.src = "https://ganesh-local-dev.o18-test.com/tracking/p.php?type=mb&m=18962&t=i&gb=1";
@@ -179,9 +179,28 @@ function trackAndRedirect2() {
     style="background:#16a34a; cursor:pointer;"
     onclick="trackAndRedirect3()">
     Track - SDK
-</button>     
+</button>    
+<!--DD Offer18 Script  -->
+<script>
+function trackAndRedirect3() {
+   window.Offer18WebSDK.trackConversion({
+          domain: 'digitalmedia.o18a.com',
+          accountId: '7559',
+          offerId: '21995449', 
+          coupon:'',
+          postbackType: '', // 'iframe' or 'pixel'
+          isGlobalPixel: false, // true or false
+          allowMultiConversion: false, // true or false
+          conversionData: {
+              payout: '10', // Payout Amount (Please specify the payout amount)
+          }
+      })
+  </script>
 
-        <!-- <script>
+
+
+         
+         <!-- <script>
 function trackAndRedirect3() {
     window.Offer18WebSDK.trackConversion({
         domain: 'ganesh-local-dev.o18-test.com/tracking',
@@ -201,8 +220,8 @@ function trackAndRedirect3() {
     <div class="debug">click url: ?m=18962&amp;campaign_id=7</div>
     </div> 
   
-  <script> -->
-    (function () {
+  <script> --> 
+         (function () {
     var visitId = new URLSearchParams(window.location.search).get('visit_id');
     if (!visitId) return;
 
@@ -212,7 +231,7 @@ function trackAndRedirect3() {
         a.href = url.toString();
     });
 })();
-  </script>
+  <!-- </script> -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"cd1faf550d8f489d9a3a0848b390f95a","r":1}' crossorigin="anonymous"></script>
 
        <!-- footer section start -->
@@ -303,21 +322,6 @@ function trackAndRedirect3() {
          });
          });
       </script>
-<!--DD Offer18 Script  -->
-<script>
-      window.Offer18WebSDK.trackConversion({
-          domain: 'digitalmedia.o18a.com',
-          accountId: '7559',
-          offerId: '21995449', 
-          coupon:'',
-          postbackType: '', // 'iframe' or 'pixel'
-          isGlobalPixel: false, // true or false
-          allowMultiConversion: false, // true or false
-          conversionData: {
-              payout: '10', // Payout Amount (Please specify the payout amount)
-          }
-      })
-  </script>
 
          
    </body>
