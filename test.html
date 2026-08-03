@@ -55,7 +55,8 @@
        <!--Offer18 script  -->
   <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script>
   <script>
-    window.Offer18WebSDK.initializeUrlParam('utm_source');
+         window.Offer18WebSDK.activateDebugMode();
+    window.Offer18WebSDK.initializeUrlParam('tid');
 </script>
      <!--  -->
      
@@ -180,7 +181,7 @@ function trackAndRedirect2() {
     Track - SDK
 </button>     
 
-        <script>
+        <!-- <script>
 function trackAndRedirect3() {
     window.Offer18WebSDK.trackConversion({
         domain: 'ganesh-local-dev.o18-test.com/tracking',
@@ -200,7 +201,7 @@ function trackAndRedirect3() {
     <div class="debug">click url: ?m=18962&amp;campaign_id=7</div>
     </div> 
   
-  <script>
+  <script> -->
     (function () {
     var visitId = new URLSearchParams(window.location.search).get('visit_id');
     if (!visitId) return;
@@ -302,6 +303,23 @@ function trackAndRedirect3() {
          });
          });
       </script>
+<!--DD Offer18 Script  -->
+<script>
+      window.Offer18WebSDK.trackConversion({
+          domain: 'digitalmedia.o18a.com',
+          accountId: '7559',
+          offerId: '21995449', 
+          coupon:'',
+          postbackType: '', // 'iframe' or 'pixel'
+          isGlobalPixel: false, // true or false
+          allowMultiConversion: false, // true or false
+          conversionData: {
+              payout: '10', // Payout Amount (Please specify the payout amount)
+          }
+      })
+  </script>
+
+         
    </body>
 
 </html>
