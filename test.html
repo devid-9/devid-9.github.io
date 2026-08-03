@@ -56,7 +56,7 @@
   <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script>
 <script>
     window.Offer18WebSDK.activateDebugMode();
-       window.Offer18WebSDK.initializeUrlParam('tid');
+      window.Offer18WebSDK.initializeUrlParam('tid');
 </script>
      <!--  -->
      
@@ -173,30 +173,31 @@ function trackAndRedirect2() {
 }
 </script>
 <!--Web Sdk  -->
-   <button
+<button
     type="button"
     class="cta js-cta"
     style="background:#16a34a; cursor:pointer;"
     onclick="trackAndRedirect3()">
     Track - SDK
-</button>    
-<!--DD Offer18 Script  -->
+</button>
+
+<!-- Tracking Script -->
 <script>
 function trackAndRedirect3() {
-   window.Offer18WebSDK.trackConversion({
-          domain: 'digitalmedia.o18a.com',
-          accountId: '7559',
-          offerId: '21995449', 
-          coupon:'',
-          postbackType: '', // 'iframe' or 'pixel'
-          isGlobalPixel: false, // true or false
-          allowMultiConversion: false, // true or false
-          conversionData: {
-              payout: '10', // Payout Amount (Please specify the payout amount)
-          }
-      })
-  </script>
-
+    window.Offer18WebSDK.trackConversion({
+        domain: 'digitalmedia.o18a.com',
+        accountId: '7559',
+        offerId: '21995449',
+        coupon: '',
+        postbackType: '',
+        isGlobalPixel: false,
+        allowMultiConversion: false,
+        conversionData: {
+            payout: '10',
+        }
+    });
+}
+</script>
 
 
 
