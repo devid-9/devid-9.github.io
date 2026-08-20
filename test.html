@@ -53,7 +53,8 @@
 </style>
 
        <!--Offer18 script  -->
-      <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js"></script>
+      <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script>
+      <!-- <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js"></script> -->
 <script>
     window.Offer18WebSDK.activateDebugMode();
       window.Offer18WebSDK.initializeUrlParam('tid');
@@ -172,13 +173,13 @@ function trackAndRedirect2() {
     document.body.appendChild(img);
 }
 </script>
-<!--Web Sdk  -->
+<!--Web Sdk - Media Buyer  -->
 <button
     type="button"
     class="cta js-cta"
     style="background:#16a34a; cursor:pointer;"
     onclick="trackAndRedirect3()">
-    Track - SDK
+    Track MB- SDK
 </button>
 
 <!-- Tracking Script -->
@@ -201,6 +202,31 @@ function trackAndRedirect3() {
 }
 </script>
 
+<!--Web Sdk - Media Buyer  -->
+<button
+    type="button"
+    class="cta js-cta"
+    style="background:#16a34a; cursor:pointer;"
+    onclick="trackAndRedirect4()">
+    Track Live - SDK
+</button>
+
+<!-- Tracking Script -->
+<script>
+function trackAndRedirect4() {
+  <script>
+      window.Offer18WebSDK.trackConversion({
+          domain: 'digitalmedia.o18a.com',
+          accountId: '7559',
+          coupon:'',
+          postbackType: '', // 'iframe' or 'pixel'
+          isGlobalPixel: true, // true or false
+          allowMultiConversion: false, // true or false
+          conversionData: {
+              adv_sub1: '111@klkaks.com',
+          }
+      })
+  </script>
 
 
   <!-- <script>
