@@ -53,7 +53,7 @@
 </style>
 
        <!--Offer18 script  -->
-  <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script>
+      <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js"></script>
 <script>
     window.Offer18WebSDK.activateDebugMode();
       window.Offer18WebSDK.initializeUrlParam('tid');
@@ -185,13 +185,14 @@ function trackAndRedirect2() {
 <script>
 function trackAndRedirect3() {
     window.Offer18WebSDK.trackConversion({
-        domain: 'digitalmedia.o18a.com',
-        accountId: '7559',
-        offerId: '21995449',
+        domain: 'ganesh-local-dev.o18-test.com/tracking',
+        accountId: '18962',
+        offerId: '11',
         coupon: '',
         postbackType: '',
         isGlobalPixel: false,
         allowMultiConversion: false,
+        mediaBuyer: true,
         conversionData: {
         event: 'initial', // Event Name (Please specify the event)
             payout: '10',
