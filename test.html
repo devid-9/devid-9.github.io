@@ -228,27 +228,59 @@ function trackAndRedirect4() {
     });
 }
 </script>
-<br>
+<hr>
          
 <!-- Clickless Coupon - Live -->
-<button
+<div class="coupon-box">
+  <input
+    type="text"
+    id="couponInput"
+    placeholder="Enter coupon code"
+  />
+
+  <button
     type="button"
-    class="cta js-cta"
-    style="background:#16a34a; cursor:pointer;"
-    onclick="trackAndRedirect5()">
+    id="clicklessCouponBtn"
+  >
     Clickless Coupon
-</button>
+  </button>
+</div>
+
+         <script>
+document.getElementById("clicklessCouponBtn").addEventListener("click", function () {
+
+    // Get the coupon entered by the user
+    var coupon = document.getElementById("couponInput").value.trim();
+
+    // Check if coupon is empty
+    if (!coupon) {
+        alert("Please enter a coupon code.");
+        return;
+    }
+
+    // Your existing postback URL
+    var postbackUrl = "https://digitalmedia.o18.click/p?o=21968568&m=7559&t=clickless_coupon&coupon=";
+
+    // Add coupon value safely to the URL
+    postbackUrl += encodeURIComponent(coupon);
+
+    // Fire the postback
+    window.location.href = postbackUrl;
+});
+</script>
+
+
          
-<script>
+<!-- <script>
 function trackAndRedirect5() {
     var img = document.createElement("img");
-    img.src = "https://digitalmedia.o18.click/p?o=21968568&m=7559&t=clickless_coupon&coupon=c1";
+    img.src = "https://digitalmedia.o18.click/p?o=21968568&m=7559&t=clickless_coupon&coupon=";
     img.width = 0;
     img.height = 0;
     img.style.display = "none";
     document.body.appendChild(img);
 }
-</script>
+</script> -->
 
          <br>
   <!-- <script>
