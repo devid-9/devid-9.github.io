@@ -228,7 +228,8 @@ function trackAndRedirect4() {
     });
 }
 </script>
-
+<br>
+         
 <!-- Clickless Coupon - Live -->
 <button
     type="button"
@@ -237,13 +238,19 @@ function trackAndRedirect4() {
     onclick="trackAndRedirect5()">
     Clickless Coupon
 </button>
-
+         
 <script>
 function trackAndRedirect5() {
-<img src="https://digitalmedia.o18.click/p?o=21968568&m=7559&t=clickless_coupon&coupon=c1" width="0px" height="0px">   
+    var img = document.createElement("img");
+    img.src = "https://digitalmedia.o18.click/p?o=21968568&m=7559&t=clickless_coupon&coupon=c1";
+    img.width = 0;
+    img.height = 0;
+    img.style.display = "none";
+    document.body.appendChild(img);
 }
 </script>
 
+         <br>
   <!-- <script>
          (function () {
     var visitId = new URLSearchParams(window.location.search).get('visit_id');
