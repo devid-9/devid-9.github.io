@@ -232,40 +232,65 @@ function trackAndRedirect4() {
          
 <!-- Clickless Coupon - Live -->
 <div class="coupon-box">
+
+  <!-- Offer ID -->
+  <input
+    type="text"
+    id="offerIdInput"
+    placeholder="Enter Offer ID"
+  />
+
+  <!-- Coupon Code -->
   <input
     type="text"
     id="couponInput"
     placeholder="Enter coupon code"
   />
 
+  <!-- Submit -->
   <button
     type="button"
     id="clicklessCouponBtn"
   >
     Clickless Coupon
   </button>
+
 </div>
 
-         <script>
+<script>
 document.getElementById("clicklessCouponBtn").addEventListener("click", function () {
 
-    // Get the coupon entered by the user
+    // Get Offer ID from input
+    var offerId = document.getElementById("offerIdInput").value.trim();
+
+    // Get Coupon from input
     var coupon = document.getElementById("couponInput").value.trim();
 
-    // Check if coupon is empty
+    // Validate Offer ID
+    if (!offerId) {
+        alert("Please enter an Offer ID.");
+        return;
+    }
+
+    // Validate Coupon
     if (!coupon) {
         alert("Please enter a coupon code.");
         return;
     }
 
-    // Your existing postback URL
-    var postbackUrl = "https://digitalmedia.o18.click/p?o=21968568&m=7559&t=clickless_coupon&coupon=";
+    // Fire Offer18 conversion tracking
+    window.Offer18WebSDK.trackConversion({
+        domain: 'digitalmedia.o18a.com',
+        accountId: '7559',
+        coupon: coupon,
+        postbackType: 'pixel',
+        isGlobalPixel: true,
+        offerId: offerId,
+        clickless_coupon: true,
+        allowMultiConversion: false,
+        conversionData: {}
+    });
 
-    // Add coupon value safely to the URL
-    postbackUrl += encodeURIComponent(coupon);
-
-    // Fire the postback
-    window.location.href = postbackUrl;
 });
 </script>
 
