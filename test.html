@@ -53,15 +53,13 @@
 </style>
 
        <!--Offer18 script  -->
-      <script>  
-      window.Offer18WebSDK.activateDebugMode();
+   <script>
+    window.Offer18WebSDK.activateDebugMode();
+</script>
 
       <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script>
-      <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js"></script>
-      </script>
 <script>
-    window.Offer18WebSDK.activateDebugMode();
-      window.Offer18WebSDK.initializeUrlParam('tid');
+    window.Offer18WebSDK.initializeUrlParam('<click_id>');
 </script>
      <!--  -->
      
@@ -184,46 +182,53 @@ function trackAndRedirect2() {
 
 
 <!-- Web SDK - Media Buyer -->
-<button type="button" id="trackMbSdk">
-  Track MB - SDK
+
+<!-- Web SDK - Media Buyer -->
+<button
+    type="button"
+    class="cta js-cta"
+    id="trackMbSdk"
+    style="background:#16a34a; cursor:pointer;"
+>
+    Track MB - SDK
 </button>
 
 <script>
 document.getElementById('trackMbSdk').addEventListener('click', function () {
-    console.log('1. Button clicked');
+    console.log('Track MB - SDK button clicked');
 
-    console.log('2. SDK:', window.Offer18WebSDK);
-
-    if (typeof window.Offer18WebSDK?.trackConversion !== 'function') {
-        console.error('3. trackConversion is unavailable');
+    if (!window.Offer18WebSDK) {
+        console.error('Offer18WebSDK is not loaded');
         return;
     }
 
-    console.log('3. Calling trackConversion');
+    if (typeof window.Offer18WebSDK.trackConversion !== 'function') {
+        console.error('trackConversion function is unavailable');
+        return;
+    }
 
     try {
         const result = window.Offer18WebSDK.trackConversion({
             domain: 'ganesh-local-dev.o18-test.com/tracking',
             accountId: '18962',
-            offerId: '',
+            offerId: '', // Replace with the actual Offer ID
             coupon: '',
             postbackType: '',
             isGlobalPixel: true,
             allowMultiConversion: false,
             mediaBuyer: true,
             conversionData: {
-                event: '',
+                event: '', // Replace with the required event name
                 payout: '10'
             }
         });
 
-        console.log('4. Function returned:', result);
+        console.log('trackConversion called', result);
     } catch (error) {
-        console.error('Tracking call failed:', error);
+        console.error('Tracking error:', error);
     }
 });
 </script>
-
 
 
          
