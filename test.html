@@ -57,7 +57,7 @@
     window.Offer18WebSDK.activateDebugMode();
 </script>
 
-      <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script>
+  <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js?v=<?= time() ?>"></script>
 <script>
     window.Offer18WebSDK.initializeUrlParam('<click_id>');
 </script>
@@ -192,42 +192,29 @@ function trackAndRedirect2() {
 >
     Track MB - SDK
 </button>
+  <script>
+    window.Offer18WebSDK.trackConversion({
+      domain: 'ganesh-local-dev.o18-test.com',
+      accountId: '18962',
+      postbackType: 'iframe',   // t=f
+      isGlobalPixel: true,      // gb=1 — use the global tid cookie (no per-offer id needed)
+      mediaBuyer: true,         // type=mb
+      allowMultiConversion: true, // keep the cookie so you can re-test; drop for production single-conversion
+      conversionData: {
+        event: 'initial',
+        sale: '100',
+        payout: '10',
+        currency: 'INR',
+        adv_sub1: '111@adv',
+        adv_sub2: '222@adv',
+        adv_sub3: '333@adv',
+        adv_sub4: '444@adv',
+        adv_sub5: '555@adv'
+      }
+    });
+  </script>
+</body>
 
-<script>
-document.getElementById('trackMbSdk').addEventListener('click', function () {
-    console.log('Track MB - SDK button clicked');
-
-    if (!window.Offer18WebSDK) {
-        console.error('Offer18WebSDK is not loaded');
-        return;
-    }
-
-    if (typeof window.Offer18WebSDK.trackConversion !== 'function') {
-        console.error('trackConversion function is unavailable');
-        return;
-    }
-
-    try {
-        const result = window.Offer18WebSDK.trackConversion({
-            domain: 'ganesh-local-dev.o18-test.com/tracking',
-            accountId: '18962',
-            offerId: '', // Replace with the actual Offer ID
-            coupon: '',
-            postbackType: '',
-            isGlobalPixel: true,
-            allowMultiConversion: false,
-            mediaBuyer: true,
-            conversionData: {
-                event: '', // Replace with the required event name
-                payout: '10'
-            }
-        });
-
-        console.log('trackConversion called', result);
-    } catch (error) {
-        console.error('Tracking error:', error);
-    }
-});
 </script>
 
 
