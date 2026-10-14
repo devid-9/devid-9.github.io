@@ -52,17 +52,18 @@
 }
 </style>
 
-       <!--Offer18 script  -->
-   <!-- <script>
+
+      <!--  O18  Script - ReDirect-->
+      <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js"></script>
+      <script>
+    window.Offer18WebSDK.initializeUrlParam('tid');
+</script>
+<script>
     window.Offer18WebSDK.activateDebugMode();
 </script>
 
-  <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js?v=<?= time() ?>"></script>
-<script>
-    window.Offer18WebSDK.initializeUrlParam('<click_id>');
-</script> -->
-     <!--  -->
-     
+
+      
    </head>
 <body>
  <div class="header_section header_bg">
@@ -194,7 +195,6 @@ function trackAndRedirect2() {
 </button>
   <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js?v=<?= time() ?>"></script>
   <script>
-    window.Offer18WebSDK.activateDebugMode();
     window.Offer18WebSDK.trackConversion({
       domain: 'ganesh-local-dev.o18-test.com',
       accountId: '18962',
