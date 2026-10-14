@@ -183,8 +183,6 @@ function trackAndRedirect2() {
 
 
 <!-- Web SDK - Media Buyer -->
-
-<!-- Web SDK - Media Buyer -->
 <button
     type="button"
     class="cta js-cta"
@@ -193,15 +191,19 @@ function trackAndRedirect2() {
 >
     Track MB - SDK
 </button>
-  <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js?v=<?= time() ?>"></script>
-  <script>
+
+<script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js?v=<?= time() ?>"></script>
+
+<script>
+  document.getElementById('trackMbSdk').addEventListener('click', function () {
+
     window.Offer18WebSDK.trackConversion({
       domain: 'ganesh-local-dev.o18-test.com',
       accountId: '18962',
-      postbackType: 'iframe',   // t=f
-      isGlobalPixel: true,      // gb=1 — use the global tid cookie (no per-offer id needed)
-      mediaBuyer: true,         // type=mb
-      allowMultiConversion: true, // keep the cookie so you can re-test; drop for production single-conversion
+      postbackType: 'iframe',
+      isGlobalPixel: true,
+      mediaBuyer: true,
+      allowMultiConversion: true,
       conversionData: {
         event: 'initial',
         sale: '100',
@@ -214,7 +216,10 @@ function trackAndRedirect2() {
         adv_sub5: '555@adv'
       }
     });
-  </script>
+
+  });
+</script>
+
 
 
          
