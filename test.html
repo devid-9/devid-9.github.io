@@ -180,145 +180,64 @@ function trackAndRedirect2() {
     document.body.appendChild(img);
 }
 </script>
-<!--Web Sdk - Media Buyer  -->
+
+
+
+<!-- Web SDK - Media Buyer -->
 <button
     type="button"
     class="cta js-cta"
+    id="trackMbSdk"
     style="background:#16a34a; cursor:pointer;"
-    onclick="trackAndRedirect3()">
-    Track MB- SDK
-</button>
-
-<!-- Tracking Script -->
-<script>
-function trackAndRedirect3() {
-    window.Offer18WebSDK.trackConversion({
-        domain: 'ganesh-local-dev.o18-test.com/tracking',
-        accountId: '18962',
-        offerId: '',
-        coupon: '',
-        postbackType: '',
-        isGlobalPixel: true,
-        allowMultiConversion: false,
-        mediaBuyer: true,
-        conversionData: {
-        event: '', // Event Name (Please specify the event)
-            payout: '10',
-        }
-    });
-}
-</script>
-<br>
--------------------------------
-         
-<!-- Web SDK - Live -->
-<button
-    type="button"
-    class="cta js-cta"
-    style="background:#16a34a; cursor:pointer;"
-    onclick="trackAndRedirect4()">
-    Track Live - SDK
+>
+    Track MB - SDK
 </button>
 
 <script>
-function trackAndRedirect4() {
-    window.Offer18WebSDK.trackConversion({
-        domain: 'digitalmedia.o18a.com',
-        accountId: '7559',
-        coupon: '',
-        postbackType: 'iframe',
-        isGlobalPixel: true,
-        allowMultiConversion: false,
-        conversionData: {
-            adv_sub1: '111@klkaks.com'
-        }
-    });
-}
-</script>
-<hr>
-         
-<!-- Clickless Coupon - Live -->
-<div class="coupon-box">
+document.getElementById('trackMbSdk').addEventListener('click', function () {
+    console.log('Track MB - SDK button clicked');
 
-  <!-- Offer ID -->
-  <input
-    type="text"
-    id="offerIdInput"
-    placeholder="Enter Offer ID"
-  />
-
-  <!-- Coupon Code -->
-  <input
-    type="text"
-    id="couponInput"
-    placeholder="Enter coupon code"
-  />
-
-  <!-- Submit -->
-  <button
-    type="button"
-    id="clicklessCouponBtn"
-  >
-    Clickless Coupon
-  </button>
-
-</div>
-
-<script>
-document.getElementById("clicklessCouponBtn").addEventListener("click", function () {
-
-    // Get Offer ID from input
-    var offerId = document.getElementById("offerIdInput").value.trim();
-
-    // Get Coupon from input
-    var coupon = document.getElementById("couponInput").value.trim();
-
-    // Validate Offer ID
-    if (!offerId) {
-        alert("Please enter an Offer ID.");
+    if (!window.Offer18WebSDK) {
+        console.error('Offer18WebSDK is not loaded');
         return;
     }
 
-    // Validate Coupon
-    if (!coupon) {
-        alert("Please enter a coupon code.");
+    if (typeof window.Offer18WebSDK.trackConversion !== 'function') {
+        console.error('trackConversion function is unavailable');
         return;
     }
 
-    // Fire Offer18 conversion tracking
-    window.Offer18WebSDK.trackConversion({
-        domain: 'marketingtek.o18a.com',
-        accountId: '8167',
-        coupon: coupon,
-        postbackType: 'pixel',
-        isGlobalPixel: true,
-        offerId: offerId,
-        clickless_coupon: true,
-        allowMultiConversion: false,
-        conversionData: {
-           sale: '100',
-           payout: '20',
-        }
-    });
+    try {
+        const result = window.Offer18WebSDK.trackConversion({
+            domain: 'ganesh-local-dev.o18-test.com/tracking',
+            accountId: '18962',
+            offerId: '', // Replace with the actual Offer ID
+            coupon: '',
+            postbackType: '',
+            isGlobalPixel: true,
+            allowMultiConversion: false,
+            mediaBuyer: true,
+            conversionData: {
+                event: '', // Replace with the required event name
+                payout: '10'
+            }
+        });
 
+        console.log('trackConversion called', result);
+    } catch (error) {
+        console.error('Tracking error:', error);
+    }
 });
 </script>
 
 
-         
-<!-- <script>
-function trackAndRedirect5() {
-    var img = document.createElement("img");
-    img.src = "https://digitalmedia.o18.click/p?o=21968568&m=7559&t=clickless_coupon&coupon=";
-    img.width = 0;
-    img.height = 0;
-    img.style.display = "none";
-    document.body.appendChild(img);
-}
-</script> -->
 
-         <br>
-  <!-- <script>
+
+
+
+         
+
+<script>
          (function () {
     var visitId = new URLSearchParams(window.location.search).get('visit_id');
     if (!visitId) return;
