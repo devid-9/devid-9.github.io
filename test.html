@@ -184,53 +184,45 @@ function trackAndRedirect2() {
 
 
 <!-- Web SDK - Media Buyer -->
-<button
-  type="button"
-  onclick="alert('Button click is working!')"
-  style="background:#16a34a;color:white;padding:12px;cursor:pointer;"
->
-  Test Button
+<button type="button" id="trackMbSdk">
+  Track MB - SDK
 </button>
 
 <script>
 document.getElementById('trackMbSdk').addEventListener('click', function () {
-    console.log('Track MB - SDK button clicked');
+    console.log('1. Button clicked');
 
-    if (!window.Offer18WebSDK) {
-        console.error('Offer18WebSDK is not loaded');
+    console.log('2. SDK:', window.Offer18WebSDK);
+
+    if (typeof window.Offer18WebSDK?.trackConversion !== 'function') {
+        console.error('3. trackConversion is unavailable');
         return;
     }
 
-    if (typeof window.Offer18WebSDK.trackConversion !== 'function') {
-        console.error('trackConversion function is unavailable');
-        return;
-    }
+    console.log('3. Calling trackConversion');
 
     try {
         const result = window.Offer18WebSDK.trackConversion({
             domain: 'ganesh-local-dev.o18-test.com/tracking',
             accountId: '18962',
-            offerId: '', // Replace with the actual Offer ID
+            offerId: '',
             coupon: '',
             postbackType: '',
             isGlobalPixel: true,
             allowMultiConversion: false,
             mediaBuyer: true,
             conversionData: {
-                event: '', // Replace with the required event name
+                event: '',
                 payout: '10'
             }
         });
 
-        console.log('trackConversion called', result);
+        console.log('4. Function returned:', result);
     } catch (error) {
-        console.error('Tracking error:', error);
+        console.error('Tracking call failed:', error);
     }
 });
 </script>
-
-
-
 
 
 
