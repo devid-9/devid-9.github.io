@@ -192,7 +192,9 @@ function trackAndRedirect2() {
 >
     Track MB - SDK
 </button>
+  <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js?v=<?= time() ?>"></script>
   <script>
+    window.Offer18WebSDK.activateDebugMode();
     window.Offer18WebSDK.trackConversion({
       domain: 'ganesh-local-dev.o18-test.com',
       accountId: '18962',
@@ -213,9 +215,6 @@ function trackAndRedirect2() {
       }
     });
   </script>
-</body>
-
-</script>
 
 
          
