@@ -186,7 +186,9 @@ function trackAndRedirect2() {
     document.body.appendChild(img);
 }
 </script>
-<!--Web Sdk - Media Buyer  -->
+
+
+         
 <!-- Web SDK - Media Buyer -->
 <button
     type="button"
@@ -230,126 +232,9 @@ function trackAndRedirect2() {
 <br>
 <br>
          
-<!-- Web SDK - Live -->
-<button
-    type="button"
-    class="cta js-cta"
-    style="background:#16a34a; cursor:pointer;"
-    onclick="trackAndRedirect4()">
-    Track Live - SDK
-</button>
-
-<script>
-function trackAndRedirect4() {
-    window.Offer18WebSDK.trackConversion({
-        domain: 'digitalmedia.o18a.com',
-        accountId: '7559',
-        coupon: '',
-        postbackType: 'iframe',
-        isGlobalPixel: true,
-        allowMultiConversion: false,
-        conversionData: {
-            adv_sub1: '111@klkaks.com'
-        }
-    });
-}
-</script>
-<hr>
-         
-<!-- Clickless Coupon - Live -->
-<div class="coupon-box">
-
-  <!-- Offer ID -->
-  <input
-    type="text"
-    id="offerIdInput"
-    placeholder="Enter Offer ID"
-  />
-
-  <!-- Coupon Code -->
-  <input
-    type="text"
-    id="couponInput"
-    placeholder="Enter coupon code"
-  />
-
-  <!-- Submit -->
-  <button
-    type="button"
-    id="clicklessCouponBtn"
-  >
-    Clickless Coupon
-  </button>
-
-</div>
-
-<script>
-document.getElementById("clicklessCouponBtn").addEventListener("click", function () {
-
-    // Get Offer ID from input
-    var offerId = document.getElementById("offerIdInput").value.trim();
-
-    // Get Coupon from input
-    var coupon = document.getElementById("couponInput").value.trim();
-
-    // Validate Offer ID
-    if (!offerId) {
-        alert("Please enter an Offer ID.");
-        return;
-    }
-
-    // Validate Coupon
-    if (!coupon) {
-        alert("Please enter a coupon code.");
-        return;
-    }
-
-    // Fire Offer18 conversion tracking
-    window.Offer18WebSDK.trackConversion({
-        domain: 'marketingtek.o18a.com',
-        accountId: '8167',
-        coupon: coupon,
-        postbackType: 'pixel',
-        isGlobalPixel: true,
-        offerId: offerId,
-        clickless_coupon: true,
-        allowMultiConversion: false,
-        conversionData: {
-           sale: '100',
-           payout: '20',
-        }
-    });
-
-});
-</script>
 
 
          
-<!-- <script>
-function trackAndRedirect5() {
-    var img = document.createElement("img");
-    img.src = "https://digitalmedia.o18.click/p?o=21968568&m=7559&t=clickless_coupon&coupon=";
-    img.width = 0;
-    img.height = 0;
-    img.style.display = "none";
-    document.body.appendChild(img);
-}
-</script> -->
-
-         <br>
-  <!-- <script>
-         (function () {
-    var visitId = new URLSearchParams(window.location.search).get('visit_id');
-    if (!visitId) return;
-
-    document.querySelectorAll('a.js-cta').forEach(function (a) {
-        var url = new URL(a.href, window.location.href);
-        url.searchParams.set('visit_id', visitId);
-        a.href = url.toString();
-    });
-})();
-   </script> -->
-<!-- <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"cd1faf550d8f489d9a3a0848b390f95a","r":1}' crossorigin="anonymous"></script> -->
 
        <!-- footer section start -->
       <div class="footer_section layout_padding margin_top90">
