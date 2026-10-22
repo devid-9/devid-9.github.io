@@ -53,10 +53,10 @@
 </style>
 
        <!--  O18 MB Script - ReDirect-->
-      <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js"></script>
+      <!-- <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js"></script> -->
 
       
-      <!-- <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script> -->
+      <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script>
       <script>
     window.Offer18WebSDK.initializeUrlParam('tid');
 </script>
@@ -192,17 +192,17 @@ function trackAndRedirect2() {
     Track MB - SDK
 </button>
 
-<script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js?v=<?= time() ?>"></script>
+<!-- <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js?v=<?= time() ?>"></script> -->
 
-<!-- <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script> -->
+<script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script>
          
 <script>
   document.getElementById('trackMbSdk').addEventListener('click', function () {
     window.Offer18WebSDK.activateDebugMode();
     window.Offer18WebSDK.trackConversion({
-      // domain: 'digitalmedia.o18a.com',
-      domain: 'ganesh-local-dev.o18-test.com/tracking',
-      accountId: '18962',
+      domain: 'digitalmedia.o18a.com',
+      // domain: 'ganesh-local-dev.o18-test.com/tracking',
+      accountId: '7559',
       postbackType: 'iframe',
       isGlobalPixel: true,
       mediaBuyer: true,
