@@ -64,7 +64,30 @@
     window.Offer18WebSDK.activateDebugMode();
 </script>
 
+      <!--                           -->
 
+
+      
+  <!--  O18  Script -Direct-->
+
+      
+      <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js"></script>
+
+      <!-- <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script> -->
+<script>
+    window.Offer18WebSDK.trackClick({
+        trackingURL: 'https://ganesh-local-dev.o18-test.com/tracking/c.php?m=18962',
+        keymapping: ['campaign_id:campaign_id',]
+    });
+</script>
+<script>
+    window.Offer18WebSDK.activateDebugMode();
+</script>
+      <script>
+    window.Offer18WebSDK.initializeUrlParam('tid');
+</script>
+
+      <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
       
    </head>
 <body>
@@ -194,15 +217,15 @@ function trackAndRedirect2() {
     Track MB - SDK
 </button>
 
-<!-- <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js"></script>  -->
+<script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js"></script> 
          <!-- ganesh local -->
          
-<script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script>
+<!-- <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script> -->
 <script>
   document.getElementById('trackMbSdk').addEventListener('click', function () {
     window.Offer18WebSDK.activateDebugMode();
     window.Offer18WebSDK.trackConversion({
-    domain: 'digitalmedia.o18.click',
+    // domain: 'digitalmedia.o18.click',
       domain: 'ganesh-local-dev.o18-test.com/tracking',
       accountId: '18962',
       postbackType: 'iframe',
