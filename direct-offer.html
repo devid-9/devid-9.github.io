@@ -56,17 +56,20 @@
   <!--  O18  Script -Direct- Offers Only->
 
       
-      <!-- <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script> -->
       
-  <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js?v=<?= time() ?>"></script>
+  <!-- <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js?v=<?= time() ?>"></script> -->
+
+ <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script>
+
   <script>
     window.Offer18WebSDK.initializeUrlParam('tid');
 </script>
   <script>
     window.Offer18WebSDK.activateDebugMode();
     window.Offer18WebSDK.trackClick({
-      trackingURL: 'https://ganesh-local-dev.o18-test.com/tracking/c.php?m=18962',
-        keymapping: ['campaign_id:campaign_id', 'aff_sub1:aff_sub1',],
+      // trackingURL: 'https://ganesh-local-dev.o18-test.com/tracking/c.php?m=18962',
+       trackingURL: 'https://digitalmedia.o18.click/tracking/c?m=7559'
+       keymapping: ['campaign_id:campaign_id', 'aff_sub1:aff_sub1',],
       mediaBuyer: true
     });
   </script>
@@ -168,7 +171,8 @@ function trackAndRedirect() {
     document.body.appendChild(iframe);
 }
 </script>
-
+<br>
+         <br>
 <!-- Pixel -->
       <button
     type="button"
@@ -189,7 +193,8 @@ function trackAndRedirect2() {
 }
 </script>
 
-
+<br>
+         <br>
          
 <!-- Web SDK - Media Buyer -->
 <button
@@ -201,14 +206,16 @@ function trackAndRedirect2() {
     Track MB - SDK
 </button>
 
-<script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js?v=<?= time() ?>"></script>
+<!-- <script src="https://ganesh-local-dev.o18-test.com/web-resources/sdk/web/WebSDK.js?v=<?= time() ?>"></script> -->
+
+   <script src="https://web-resources.offer18.net/sdk/web/WebSDK.js"></script>
      <script>    window.Offer18WebSDK.initializeUrlParam('tid');  </script>
 
 <script>
   document.getElementById('trackMbSdk').addEventListener('click', function () {
 
     window.Offer18WebSDK.trackConversion({
-      domain: 'ganesh-local-dev.o18-test.com/tracking',
+    trackingURL: 'https://digitalmedia.o18.click/c?m=7559',
       accountId: '18962',
       postbackType: 'iframe',
       isGlobalPixel: true,
